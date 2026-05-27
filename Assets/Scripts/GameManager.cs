@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public AirportManager airportManager;
+
     [Header("Objects")]
     public GameObject[] stairsBlockColliderObj;
     public GameObject excavatorMove;
