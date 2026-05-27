@@ -13,19 +13,24 @@ public class TrolleyBag : MonoBehaviour
     public float duration = 3f;
     public float duration2 = 6f;
 
-    public TMP_Text weightText;
+/*    public TMP_Text weightText;
     public int minAmmount = 20;
     public int maxAmmount = 25;
+*/
+/*    private void OnEnable()
+    {
+        StartCoroutine(ExcavatorMoveTop());
+    }*/
 
-    private void OnEnable()
+    public void StratBagSubmit()
     {
         StartCoroutine(ExcavatorMoveTop());
     }
 
     public IEnumerator ExcavatorMoveTop()
     {
-        int random = Random.Range(minAmmount, maxAmmount);
-        weightText.text = random.ToString();
+/*        int random = Random.Range(minAmmount, maxAmmount);
+        weightText.text = random.ToString();*/
 
         yield return new WaitForSeconds(2f);
 

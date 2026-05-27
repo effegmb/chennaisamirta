@@ -42,6 +42,7 @@ public class AadharMaager : MonoBehaviour
         aadharGiveBackCollider.SetActive(false);
 
         advanceSecurityCheck.doorOpenBoxCollider.isTrigger = true;
+        GameManager.instance.airportManager.weightMechineArrow.SetActive(true);
     }
 
     public void AadharIsChecked()

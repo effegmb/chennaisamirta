@@ -9,6 +9,7 @@ public class BagWeightCheck : MonoBehaviour
     {
         if (other.CompareTag("Bag"))
         {
+            GameManager.instance.airportManager.weightMechineArrow.SetActive(false);
             other.gameObject.GetComponent<SuitCase>().enabled = false;
             other.gameObject.GetComponent<XRGeneralGrabTransformer>().enabled = false;
             objectPlaceCollider.SetActive(true);

@@ -12,10 +12,11 @@ public class TiketManager : MonoBehaviour
     public GameObject tiketInGirlHand;
 
     public GameObject tiketHandOverObj;
-    
+    public bool ticketGiveStart = false;
 
     public void StartCheckTiket()
     {
+        ticketGiveStart = true;
         ticketGiveCanvas.SetActive(false);
         ticketGiveAnimator.SetInteger("TiketChecking", 1);
     }
@@ -40,6 +41,9 @@ public class TiketManager : MonoBehaviour
 
     public void GotoIdle()
     {
+        GameManager.instance.airportManager.ticketCounterBagSoket.SetActive(true);
+        GameManager.instance.airportManager.versionTwoBag.SetActive(false);
+        GameManager.instance.airportManager.newSubmitBag.SetActive(true);
         firstTimeOn = true;
         ticketGiveAnimator.SetInteger("TiketChecking", 0);
     }
