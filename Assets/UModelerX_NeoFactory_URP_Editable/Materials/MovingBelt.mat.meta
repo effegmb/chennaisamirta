@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dd7d7261bfbb83e4fba7922e67a41aa7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 330108
+  packageName: NeoFactory (UModeler X)
+  packageVersion: 1.0
+  assetPath: Assets/UModelerX_NeoFactory_URP_Editable/Materials/MovingBelt.mat
+  uploadId: 781019
