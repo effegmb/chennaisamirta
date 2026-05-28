@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     public GameObject excavatorMove;
 
     public bool weightIsCheck;
+    public bool flyMode = false;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (instance != this)
         {

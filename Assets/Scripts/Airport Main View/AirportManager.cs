@@ -8,6 +8,11 @@ public class AirportManager : MonoBehaviour
     public GameObject ticketCounterBagSoket;
     public GameObject versionTwoBag;
     public GameObject newSubmitBag;
+
+    public BoxCollider[] stairsCollieder;
+    public GameObject[] stairsArrowPoint;
+    public GameObject checkArmyManCollider;
+    public GameObject flymodeCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

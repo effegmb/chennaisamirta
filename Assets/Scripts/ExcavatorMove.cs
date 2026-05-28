@@ -8,6 +8,7 @@ public class ExcavatorMove : MonoBehaviour
     public Transform endpos;
     public float duration = 2;
     public GameObject player;
+    public GameObject lastBoxColliderOn;
 
     public IEnumerator ExcavatorMoveTop()
     {
@@ -23,9 +24,10 @@ public class ExcavatorMove : MonoBehaviour
         }
 
         player.transform.position = endpos.position;
+        lastBoxColliderOn.SetActive(true);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.CompareTag("Player"))
         {

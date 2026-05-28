@@ -64,5 +64,14 @@ public class TrolleyBag : MonoBehaviour
         GameManager.instance.stairsBlockColliderObj[1].gameObject.SetActive(false);
         GameManager.instance.excavatorMove.SetActive(true);
         bag.transform.position = endPos.position;
+
+        for(int i = 0; i < GameManager.instance.airportManager.stairsArrowPoint.Length; i++)
+        {
+            GameManager.instance.airportManager.stairsArrowPoint[i].SetActive(true);
+        }
+        for (int i = 0; i < GameManager.instance.airportManager.stairsCollieder.Length; i++)
+        {
+            GameManager.instance.airportManager.stairsCollieder[i].isTrigger = true;
+        }
     }
 }

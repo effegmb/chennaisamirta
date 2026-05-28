@@ -4,7 +4,7 @@ public class TicketGiveCollider : MonoBehaviour
 {
     public TiketManager tiketManager;
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.CompareTag("Player") && tiketManager.ticketGiveStart == false)
         {

@@ -39,7 +39,7 @@ public class TiketManager : MonoBehaviour
         ticketGiveAnimator.SetInteger("TiketChecking", 3);
     }
 
-    public void GotoIdle()
+    public virtual void GotoIdle()
     {
         GameManager.instance.airportManager.ticketCounterBagSoket.SetActive(true);
         GameManager.instance.airportManager.versionTwoBag.SetActive(false);
