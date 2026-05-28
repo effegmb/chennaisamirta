@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public GameObject excavatorMove;
 
     public bool weightIsCheck;
-    public bool flyMode = true;
 
     private void Awake()
     {

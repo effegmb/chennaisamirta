@@ -8,6 +8,8 @@ public class MoveSplineComplete : MonoBehaviour
     public ShakeManage shakeManager;
 
     public GameObject UICanvas;
+    public bool firstTime = false;
+    public GameObject CompleteCanvas;
     private void OnEnable()
     {
         splineAnimate.Completed += OnSplineComplete;
@@ -20,8 +22,16 @@ public class MoveSplineComplete : MonoBehaviour
 
     private void OnSplineComplete()
     {
-        Debug.Log("Spline Animation Completed!");
-        UICanvas.SetActive(true);
-        shakeManager.enabled = true;
+        if (firstTime == false)
+        {
+            firstTime = true;
+            Debug.Log("Spline Animation Completed!");
+            UICanvas.SetActive(true);
+            shakeManager.enabled = true;
+        }
+        else
+        {
+            CompleteCanvas.SetActive(true);
+        }
     }
 }
