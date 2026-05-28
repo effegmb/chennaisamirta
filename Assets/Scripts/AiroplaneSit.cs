@@ -36,8 +36,8 @@ public class AiroplaneSit : MonoBehaviour
             //xrCameraRig.transform.rotation = Quaternion.Euler(0, 90, 0);
 
             seatBlockCollider.SetActive(true);
+            newXRCameraRig.transform.localPosition = new Vector3(-2.82200003f, -2.53730965f, 15.1820002f);
             xrCameraRig.SetActive(false);
-            newXRCameraRig.transform.localPosition = new Vector3(-2.74600005f, -3.12899971f, 15.8079996f);
             newXRCameraRig.SetActive(true);
 
             seatBeltCharacter.SetActive(true);
