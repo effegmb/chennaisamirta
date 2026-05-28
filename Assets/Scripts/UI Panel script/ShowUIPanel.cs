@@ -4,7 +4,7 @@ using System.Collections;
 public class ShowUIPanel : MonoBehaviour
 {
     public GameObject uiPanel;   // Assign your UI Panel
-    public float displayTime = 5f; // Seconds to stay visible
+    //public float displayTime = 5f; // Seconds to stay visible
 
     private Coroutine hideCoroutine;
 
@@ -25,7 +25,7 @@ public class ShowUIPanel : MonoBehaviour
                 StopCoroutine(hideCoroutine);
             }
 
-            hideCoroutine = StartCoroutine(HidePanelAfterTime());
+            //hideCoroutine = StartCoroutine(HidePanelAfterTime());
         }
     }
 
@@ -37,10 +37,10 @@ public class ShowUIPanel : MonoBehaviour
         }
     }
 
-    IEnumerator HidePanelAfterTime()
-    {
-        yield return new WaitForSeconds(displayTime);
+    //IEnumerator HidePanelAfterTime()
+    //{
+    //    yield return new WaitForSeconds(displayTime);
 
-        uiPanel.SetActive(false);
-    }
+    //    uiPanel.SetActive(false);
+    //}
 }
