@@ -71,14 +71,14 @@ public class SuitCase : MonoBehaviour
     public Quaternion releaseHandRotation;
 
     [Header("Follow Settings")]
-    public Transform player; // Assign XR Rig / Camera
+    public Transform player;
     public float followSpeed = 5f;
     public float distanceFromPlayer = 0.8f;
 
     [Header("Ground Check")]
-    public float rayHeight = 2f;      // Ray start height
-    public float rayDistance = 5f;    // Raycast distance
-    public float groundOffset = 0.05f; // Small offset above ground
+    public Transform rayPoint; // Assign custom point
+    public float rayDistance = 5f;
+    public float groundOffset = 0.05f;
     public LayerMask groundLayer;
 
     private XRGrabInteractable grab;
@@ -96,7 +96,6 @@ public class SuitCase : MonoBehaviour
     {
         isHolding = true;
 
-        // Stop XR from controlling position
         grab.trackPosition = false;
         grab.trackRotation = false;
 
@@ -117,20 +116,19 @@ public class SuitCase : MonoBehaviour
     {
         if (!isHolding) return;
 
-        // Target position beside player
+        // Follow beside player
         Vector3 targetPos = player.position + player.right * distanceFromPlayer;
 
-        // Ground ray start point
-        Vector3 rayStart = targetPos + Vector3.up * rayHeight;
-
-        // Raycast downward
-        if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, rayDistance, groundLayer))
+        // Raycast from custom point
+        if (rayPoint != null)
         {
-            // Set Y position based on ground hit
-            targetPos.y = hit.point.y + groundOffset;
+            if (Physics.Raycast(rayPoint.position, Vector3.down, out RaycastHit hit, rayDistance, groundLayer))
+            {
+                targetPos.y = hit.point.y + groundOffset;
+            }
         }
 
-        // Smooth movement
+        // Smooth move
         transform.position = Vector3.Lerp(
             transform.position,
             targetPos,
@@ -138,15 +136,14 @@ public class SuitCase : MonoBehaviour
         );
     }
 
-    // Draw ray in Scene view
     void OnDrawGizmos()
     {
-        if (player == null) return;
+        if (rayPoint == null) return;
 
-        Vector3 targetPos = player.position + player.right * distanceFromPlayer;
-        Vector3 rayStart = targetPos + Vector3.up * rayHeight;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(rayStart, rayStart + Vector3.down * rayDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(
+            rayPoint.position,
+            rayPoint.position + Vector3.down * rayDistance
+        );
     }
 }
