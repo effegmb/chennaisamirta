@@ -11180,6 +11180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: securityidlescanning1
       objectReference: {fileID: 0}
+    - target: {fileID: 5111894356784712697, guid: 204f207ec905acb438997266acf92e99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9215013848779403852, guid: 204f207ec905acb438997266acf92e99, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.69
