@@ -5,6 +5,7 @@ public class ScanManager : MonoBehaviour
     public Animator scanAnimator;
     public bool isScanned = false;
     public ScanCollider scanCollider;
+    public GameObject arrowObj;
 
     public void ScanAnimationStart()
     {
@@ -20,5 +21,6 @@ public class ScanManager : MonoBehaviour
         GameManager.instance.airportManager.flymodeCollider.gameObject.SetActive(true);
         scanAnimator.SetBool("Scan", false);
         isScanned = true;
+        arrowObj.SetActive(true);
     }
 }
