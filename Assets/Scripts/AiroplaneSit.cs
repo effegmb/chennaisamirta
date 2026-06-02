@@ -27,7 +27,7 @@ public class AiroplaneSit : MonoBehaviour
 
     private void Start()
     {
-        airoplaneAnimate.gameObject.transform.position = new Vector3(-71.3000031f, 22.6000004f, -135.5f);
+        //airoplaneAnimate.gameObject.transform.position = new Vector3(-2.90400004f, -2.50099993f, 15.1409998f);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -36,7 +36,7 @@ public class AiroplaneSit : MonoBehaviour
             //xrCameraRig.transform.rotation = Quaternion.Euler(0, 90, 0);
 
             seatBlockCollider.SetActive(true);
-            newXRCameraRig.transform.localPosition = new Vector3(-2.82200003f, -2.53730965f, 15.1820002f);
+            newXRCameraRig.transform.localPosition = new Vector3(-2.74300003f, -2.50099993f, 15.2379999f);
             xrCameraRig.SetActive(false);
             newXRCameraRig.SetActive(true);
 

@@ -6,13 +6,13 @@ public class FlightManager : MonoBehaviour
 
     public GameObject cockPitCanvas;
 
-    private void OnEnable()
-    {
-        for (int i = 0; i < flymode.Length; i++)
-        {
-            flymode[i].SetActive(false);
-        }
-    }
+    //private void OnEnable()
+    //{
+    //    for (int i = 0; i < flymode.Length; i++)
+    //    {
+    //        flymode[i].SetActive(false);
+    //    }
+    //}
 
     public void CockPit()
     {
