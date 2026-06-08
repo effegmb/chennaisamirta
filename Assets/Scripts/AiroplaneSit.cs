@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using Unity.XR.CoreUtils;
 
 public class AiroplaneSit : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class AiroplaneSit : MonoBehaviour
     public SplineContainer airoplanePosition;
     public SplineContainer flyplaneContainer;
 
+    public XROrigin xrOrigin;
+    public GameObject seatPos;
+
     public UIManager uiManager;
 
     private void Start()
@@ -36,7 +40,8 @@ public class AiroplaneSit : MonoBehaviour
             //xrCameraRig.transform.rotation = Quaternion.Euler(0, 90, 0);
 
             seatBlockCollider.SetActive(true);
-            newXRCameraRig.transform.localPosition = new Vector3(-2.74300003f, -2.50099993f, 15.2379999f);
+            newXRCameraRig.transform.position = seatPos.transform.position;
+            xrOrigin.MoveCameraToWorldLocation(seatPos.transform.position);
             xrCameraRig.SetActive(false);
             newXRCameraRig.SetActive(true);
 
