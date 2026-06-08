@@ -73,7 +73,8 @@ public class SuitCase : MonoBehaviour
     [Header("Follow Settings")]
     public Transform player;
     public float followSpeed = 5f;
-    public float distanceFromPlayer = 0.8f;
+    public float distanceFromPlayer = 3f;
+    public float forwordDistance = 1;
 
     [Header("Ground Check")]
     public Transform rayPoint; // Assign custom point
@@ -117,7 +118,11 @@ public class SuitCase : MonoBehaviour
         if (!isHolding) return;
 
         // Follow beside player
-        Vector3 targetPos = player.position + player.right * distanceFromPlayer;
+        //Vector3 targetPos = player.position + player.right * distanceFromPlayer;
+        Vector3 targetPos =
+        player.position
+        - player.forward * forwordDistance  // move behind player
+        + player.right * distanceFromPlayer;    // little side offset
 
         // Raycast from custom point
         if (rayPoint != null)

@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     public GameObject nextAnimation;
 
     public GameObject shakeScriptObj;
+    private bool nextStart = false;
 
     private void Start()
     {
@@ -72,8 +73,12 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Both objects placed!");
 
-            // Move to next part here
-            NextPart();
+            if(nextStart == false)
+            {
+                nextStart = true;
+                // Move to next part here
+                NextPart();
+            }
         }
     }
 
