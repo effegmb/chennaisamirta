@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class UIManager : MonoBehaviour
 {
     public GameObject beltUICanvas;
-
+    
 
     public XRSocketInteractor socket1;
     public XRSocketInteractor socket2;
